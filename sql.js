@@ -1,12 +1,15 @@
 const sql = require('mssql');
+const dotenv = require('dotenv');
+dotenv.config({ path: `.env.${process.env.NODE_ENV}`, debug: true });
+
 const config = {
-    user: 'ihebdb', // better stored in an app setting such as process.env.DB_USER
-    password: 'rootPassword1994', // better stored in an app setting such as process.env.DB_PASSWORD
-    server: 'nodejsdatabase.database.windows.net', // better stored in an app setting such as process.env.DB_SERVER
-    port: 1433, // optional, defaults to 1433, better stored in an app setting such as process.env.DB_PORT
-    database: 'appdb', // better stored in an app setting such as process.env.DB_NAME
+    user: process.env.AZURE_DB_USER,
+    password: process.env.AZURE_DB_PWD,
+    server: process.env.AZURE_DB_SERVER,
+    port: +process.env.AZURE_DB_PORT,
+    database: process.env.AZURE_DB_DATABASE,
     authentication: {
-        type: 'default'
+        type: process.env.AZURE_DB_AUTH_TYPE
     },
     options: {
         encrypt: true
