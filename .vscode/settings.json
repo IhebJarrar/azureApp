@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/efac38b1-a5fb-43b9-9da7-eb4829c924fe/resourceGroups/ihebApps/providers/Microsoft.Web/sites/IhebWebApp1000",
+    "appService.deploySubpath": "."
+}
